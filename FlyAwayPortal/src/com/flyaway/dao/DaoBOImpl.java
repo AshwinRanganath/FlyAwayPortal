@@ -32,7 +32,7 @@ public class DaoBOImpl implements DaoBO
 			ResultSet rs=ps.executeQuery();
 			if(rs.next())
 			{
-			 b=true;	
+				b=true;	
 			}
 			else
 			{
@@ -68,7 +68,7 @@ public class DaoBOImpl implements DaoBO
 			cs.setString(6,l.getEmail());
 			cs.setString(7,"user");		
 
-			cs.execute();
+			cs.executeUpdate();
 			b=true;
 			System.out.println("Call procedure :"+b);
 		
@@ -81,31 +81,27 @@ public class DaoBOImpl implements DaoBO
 		return b; 
 		
 	}
-public boolean changePassword(String u, String p) throws FlyawayException
-{
-	boolean cp=false;
-	try( Connection conn=DBConnection.getConnection())
+	public boolean changePassword(String username, String password) throws FlyawayException
 	{
-	    
-		String sql="{CALL updatePassword(?,?)}";
-		CallableStatement cs=conn.prepareCall(sql);
-		cs.setString(1,u);
-		cs.setString(2,p);		
-		cs.execute();
-		cp=true;
-		System.out.println("Call procedure change password :"+cp);
-	
+		boolean cp=false;
+		try( Connection conn=DBConnection.getConnection())
+		{
+		    
+			String sql="{CALL updatePassword(?,?)}";
+			CallableStatement cs=conn.prepareCall(sql);
+			cs.setString(1,username);
+			cs.setString(2,password);		
+			cs.executeUpdate();
+			cp=true;
+			System.out.println("Call procedure change password :"+cp);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cp;
 		
-	} catch (ClassNotFoundException | SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
 	}
-	return cp;
-	
-}
-		
-
-	
+			
 }
 
 	

@@ -11,8 +11,6 @@ public class DBConnection {
 	//Class.forName("com.mysql.jdbc.Driver");//com.mysql.cj.jdbc.Driver
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	String url="jdbc:mysql://localhost:3306/flyaway?noAccessToProcedureBodies=true";
-	//String url="jdbc:mysql://0.tcp.ngrok.io:10500/simplilearn?noAccessToProcedureBodies=true";
-	//String url="jdbc:mysql://0.tcp.ngrok.io:19161/simplilearn?noAccessToProcedureBodies=true";
 	String username="root";
 	String password="admin";
 	

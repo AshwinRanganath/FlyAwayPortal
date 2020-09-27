@@ -22,9 +22,9 @@
 		Enter current password
 		<input type=password name="cpwd" value="password">
 		<br> Enter new password
-		<input type=password name="npwd" value="password">
+		<input type=password name="npwd" value="newpassword">
 		<br> Enter reenter new password
-		<input type=password name="nrpwd" value="password">
+		<input type=password name="nrpwd" value="newrepassword">
 		<br>
 		<input type="submit" name="change" value="Change Password">
 </form>
@@ -55,7 +55,7 @@ if(request.getParameter("change")!=null)
 		    c=lbi.isValidUser(ll);
 		    if(c)
 			lbi.changePassword("admin", request.getParameter("npwd"));
-		    %>
+%>
 <jsp:forward page="adminHome.jsp"></jsp:forward>
 <%
 		}

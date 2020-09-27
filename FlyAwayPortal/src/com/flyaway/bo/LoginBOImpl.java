@@ -56,34 +56,34 @@ public class LoginBOImpl implements LoginBO{
 		return c;
 		
 	}
-public boolean insertUser(Login l) throws FlyawayException,SQLException
-{
-	boolean d=false;boolean x=false;
-    d=checkUser(l);
-    if(d)
-    {
-    	x=dbi.insertUser(l);
-    }
-    	
-	return x;
-	
-}
-public boolean changePassword(String u, String p) throws FlyawayException
-{
-	boolean cp=false;
-	if(u!=null && p!=null)
+	public boolean insertUser(Login l) throws FlyawayException,SQLException
 	{
-		cp=dbi.changePassword(u, p);
+		boolean d=false;boolean x=false;
+	    d=checkUser(l);
+	    if(d)
+	    {
+	    	x=dbi.insertUser(l);
+	    }
+	    	
+		return x;
+		
 	}
-	else
+	public boolean changePassword(String u, String p) throws FlyawayException
 	{
-		throw new FlyawayException("Passwor is null");
+		boolean cp=false;
+		if(u!=null && p!=null)
+		{
+			cp=dbi.changePassword(u, p);
+		}
+		else
+		{
+			throw new FlyawayException("Passwor is null");
+		}
+		return cp;
+		
 	}
-	return cp;
-	
-}
 
-	}
+}
 
 	
 

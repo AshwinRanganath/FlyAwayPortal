@@ -9,7 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.CallableStatement;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import com.flyaway.model.sd.Master_s_d;
 public class Master_S_D_BODaoImpl implements Master_S_D_BO{
