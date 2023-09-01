@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_FlyAwayPortal_1693553047990-pr-trigger-input-set
+  identifier: Build_FlyAwayPortal_1693553047990prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_FlyAwayPortal_1693553047990
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
