@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_FlyAwayPortal_1694079190150-push-trigger-input-set
+  identifier: Build_FlyAwayPortal_1694079190150pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_FlyAwayPortal_1694079190150
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
